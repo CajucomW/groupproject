@@ -1,0 +1,32 @@
+.row-1{
+    border-radius: 25px;
+        border: 2px solid #73AD21;
+        padding: 5px; 
+        width: 450px;
+        height: 100px;
+        position: absolute;
+        top: 100px;
+        left: 500px;
+      }
+
+.row-2{
+        border-radius: 25px;
+        border: 2px solid #73AD21;
+        padding: 20px; 
+        width: 1000px;
+        height: 175px; 
+        position: relative;
+        top: 60px;
+        right: 300px;
+      }
+  
+.row-3{
+        border-radius: 25px;
+        border: 2px solid #73AD21;
+        padding: 20px; 
+        width: 500px;
+        height: 200px; 
+        position: absolute;
+        top: 175px;
+        left: 255px;
+       } 
