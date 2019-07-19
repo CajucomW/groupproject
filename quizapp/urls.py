@@ -19,5 +19,6 @@ from trivia import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('/', views.gamepage),
     path('game/', views.gamepage),
 ]

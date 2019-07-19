@@ -3,7 +3,7 @@ import requests
 import random
 from django.shortcuts import render
 
-response = requests.get('https://opentdb.com/api.php?amount=10')
+response = requests.get('https://opentdb.com/api.php?amount=1')
 data = response.json()
 user_answer = None
 
@@ -15,8 +15,7 @@ correct_list = []
     
 # welcome()
 
-def game():
-    # while True:
+def gamepage(request):
     for item in data['results']:            # get to the right list
         question = item['question']
         correct = item['correct_answer']    # reference keys for correct answers
@@ -38,7 +37,19 @@ def game():
         else:
             print("Sorry. The answer is", correct + ".")
         
-        print(correct_list)
+        # print(correct_list)
+    context = {
+        'trivia': question,
+        'answer0': answers[0],
+        'answer1': answers[1],
+        'answer2': answers[2],
+        'answer3': answers[3],
+    }
+    return render(request, 'game.html', context)
+    # print(answers[0])
+    # print(answers[1])
+    # print(answers[2])
+    # print(answers[3])
 
 def scores():
     correct_number = 0
@@ -46,10 +57,14 @@ def scores():
     score = correct_number * 10
     print("You scored", score, "%")
 
-# game()
+# gamepage()
 
 # scores()
 
-def gamepage(request):
-    context = {}
-    return render(request, 'game.html', context)
+
+
+# def gamepage(request):
+#     context = {
+#         trivia = 
+#     }
+#     return render(request, 'game.html', context)
