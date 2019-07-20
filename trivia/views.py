@@ -3,7 +3,7 @@ import requests
 import random
 from django.shortcuts import render
 
-response = requests.get('https://opentdb.com/api.php?amount=1')
+response = requests.get('https://opentdb.com/api.php?amount=1&type=multiple')
 data = response.json()
 user_answer = None
 
