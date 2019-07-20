@@ -23,6 +23,7 @@ def gamepage(request):
         print(question)
 
         answers = []
+        
         for choice in choices:
             answers.append(choice)      # this adds the wrong answers to the list "answers"
         answers.append(correct)         # this adds the right answer to he list "answers"
@@ -46,10 +47,6 @@ def gamepage(request):
         'answer3': answers[3],
     }
     return render(request, 'game.html', context)
-    # print(answers[0])
-    # print(answers[1])
-    # print(answers[2])
-    # print(answers[3])
 
 def scores():
     correct_number = 0
@@ -60,11 +57,3 @@ def scores():
 # gamepage()
 
 # scores()
-
-
-
-# def gamepage(request):
-#     context = {
-#         trivia = 
-#     }
-#     return render(request, 'game.html', context)
