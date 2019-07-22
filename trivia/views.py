@@ -12,7 +12,7 @@ correct_list = []
 
 #     print("Welcome to Our Group Project!")
 #     username = input("Please enter a Username: ")
-    
+
 # welcome()
 
 def gamepage(request):
@@ -27,16 +27,16 @@ def gamepage(request):
             answers.append(choice)      # this adds the wrong answers to the list "answers"
         answers.append(correct)         # this adds the right answer to he list "answers"
         random.shuffle(answers)         # this randomizes all the answers from the list "answers"
-        
+
         print(answers)
-        
+
         user_answer = input("Type your answer here: ")
         if user_answer in correct:
             correct_list.append(user_answer)
             print("You got it!")
         else:
             print("Sorry. The answer is", correct + ".")
-        
+
         # print(correct_list)
     context = {
         'trivia': question,
@@ -65,6 +65,29 @@ def scores():
 
 # def gamepage(request):
 #     context = {
-#         trivia = 
+#         trivia =
 #     }
 #     return render(request, 'game.html', context)
+
+def login_user(request):
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            messages.success(request, 'You have successfully logged in')
+            return redirect("index")
+        else:
+            messages.success(request, 'Error logging in')
+            return redirect('login')
+    else:
+        return render(request, 'login.html', {})
+
+
+def logout_user(request):
+    logout(request)
+    messages.success(request, 'You have been logged out!')
+    print('logout function working')
+    return redirect('login')
