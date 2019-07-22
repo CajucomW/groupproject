@@ -24,9 +24,9 @@
         border-radius: 25px;
         border: 2px solid #73AD21;
         padding: 20px; 
-        width: 500px;
+        width: 800px;
         height: 200px; 
         position: absolute;
         top: 175px;
-        left: 245px;
+        left: 95px;
        } 

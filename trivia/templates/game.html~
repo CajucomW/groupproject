@@ -50,9 +50,7 @@
 <!--{% extends "base.html" %}-->
 <!--{% block content %}-->
 <!--Trivia game here-->
-<style>
 
-</style>
 <div class="row-1" style="background: yellow;">
     <div class="col-sm-9">
                                                             <h1>Let's get started!</h1>
@@ -60,7 +58,7 @@
             <div class="col-8 col-sm-6">
 <!--                                                    Display trivia questions here        -->
                                                     <p>{{ trivia }}</p>
-                <div class="row-3" style="background: orange;">
+                <div class="row-3" style="background: yellow;">
                     <div class="col-4 col-sm-6">
 <!--                                                            Answers and buttons here-->
                                                             <div id="cb">
