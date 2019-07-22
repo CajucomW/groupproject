@@ -15,15 +15,16 @@ correct_list = []
     
 # welcome()
 
-def gamepage(request):
+def gamepage():
+    print("Viewed Gamepage")
     for item in data['results']:            # get to the right list
+        answers = []
         question = item['question']
-        correct = item['correct_answer']    # reference keys for correct answers
-        choices = item['incorrect_answers'] # reverence keys for incorrect answers
         print(question)
 
-        answers = []
-        
+        correct = item['correct_answer']    # reference keys for correct answers
+        choices = item['incorrect_answers'] # reverence keys for incorrect answers
+
         for choice in choices:
             answers.append(choice)      # this adds the wrong answers to the list "answers"
         answers.append(correct)         # this adds the right answer to he list "answers"
@@ -35,18 +36,20 @@ def gamepage(request):
         if user_answer in correct:
             correct_list.append(user_answer)
             print("You got it!")
+            print("--------------------")
         else:
             print("Sorry. The answer is", correct + ".")
+            print("--------------------")
         
-        # print(correct_list)
-    context = {
-        'trivia': question,
-        'answer0': answers[0],
-        'answer1': answers[1],
-        'answer2': answers[2],
-        'answer3': answers[3],
-    }
-    return render(request, 'game.html', context)
+        print(correct_list)
+    # context = {
+    #     'trivia': question,
+    #     'answer0': answers[0],
+    #     'answer1': answers[1],
+    #     'answer2': answers[2],
+    #     'answer3': answers[3],
+    # }
+    # return render(request, 'game.html', context)
 
 def scores():
     correct_number = 0
@@ -54,6 +57,6 @@ def scores():
     score = correct_number * 10
     print("You scored", score, "%")
 
-# gamepage()
+gamepage()
 
-# scores()
+scores()
