@@ -30,3 +30,195 @@
         top: 175px;
         left: 95px;
        } 
+       
+body {
+    background: #333;
+    background-image: 
+    background-size: 100;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: sans-serif;
+    font-weight: 100;
+    color: #d9d9d9;
+}
+#btn {
+  display: none;    
+}
+body > .label {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.label {    
+    background: RGBa(205,205,205,0.1);
+    padding: 10px;
+    transition: 0.25s ease;
+    cursor: pointer;
+    border: 5px solid transparent;
+}
+.label:hover {
+    border-color: RGBa(0,0,0,0.2);
+}
+.label:active {
+    background: RGBa(0,0,0,0.2);
+}
+input:checked + .overlay{
+    opacity: 1;
+    z-index: 1;
+}
+.overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: RGBa(255,255,255,0.3);
+    opacity: 0;
+    z-index: -1;
+    transition: 0.5s ease;
+}
+.popup {
+    max-height: 90%;
+    position: absolute;
+    padding: 10px;
+    left: 50%;
+    top: 50%;
+    width: 300px;
+    overflow-y: auto;
+    background: #fff;
+    color: #999;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+}
+.title {
+    font-size: 25px;
+    text-align: center;
+    display: block;
+}
+.popup input {
+    display: block;
+    margin: 20px 0;
+    width: 50%;
+    padding: 5px 0;
+    transition: 0.25s ease;
+    color: #333;
+    border: none;
+    border-bottom: 1px solid transparent;
+    font-size: 15px;
+    outline: none;
+}
+.popup input:focus {
+    width: 90%;
+    border-bottom: 1px #aaa solid;
+}
+.login {
+    margin: auto;
+    display: block;
+    width: 50px;
+    background: #eee;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.25s ease;
+    text-align: center;
+}
+.login:hover {
+    background: #e0e0e0;
+}
+.popup p {
+    text-align: center;
+    font-size: 20px;
+    margin: 30px 0;
+}
+.social-buttons {
+    margin: auto;
+    display: block;
+    width: 60%;
+}
+.social {
+    padding: 10px;
+    color: #fff;
+    transition: 0.25s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+.red {
+    background: linear-gradient(to left, #dd0000 50%,#dd0000 50%,#9A0000 50%, #9A0000 50%);
+    width: 50px;
+    display: inline-block;
+}
+.red:hover {
+    background-position: 35px;
+}
+.blue {
+    background: linear-gradient(to left, #005DDD 50%,#005DDD 50%,#00419A 50%, #00419A 50%);
+    width: 70px;
+    display: inline-block;
+}
+.blue:hover {
+    background-position: 45px;
+}
+.sean {
+    opacity: 0;
+    background: #d9d9d9;  
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100px;
+    width: 250px;
+    color: #333;
+    transition: 0.25s ease;
+    z-index: 2;
+    display: none;
+}
+img {
+    border-radius: 50%;
+    float: right;
+    margin: 8px 8px 0 0;
+    border: 2px solid #d9d9d9;
+}
+.info {
+    width: 70%;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 10px;
+}
+.username {
+    color: #005DDD;
+    text-decoration: none;
+}
+.username:hover {
+    color: #00419A;
+    text-decoration: underline;
+}
+.info-text {
+    font-size: 13px;
+}
+#real {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 3;
+}
+#real:hover + .sean {
+   display: block;
+   animation-duration: 0.25s;
+   animation-name: fadein;
+   animation-fill-mode: forwards;
+}
+.sean:hover {
+    display: block;
+    opacity: 1;
+}
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+Resources
