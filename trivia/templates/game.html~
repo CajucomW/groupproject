@@ -11,7 +11,7 @@
   <title>Trivia Challenge</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">   
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../static/vendor/bootstrap/css/ah.css" rel="stylesheet"/>
 
 </head>
@@ -65,12 +65,12 @@
 <!--                                                            Answers and buttons here-->
                                                             <div id="cb">
                 <div class="left">
-                   
+
                 </div>
                 <div class="right">
                     <ul>
                         <li class="checkbox"><label for="option1">
-                            <input id="option1" type="checkbox" value="1" name="cb">Answer 1
+                            <input id="option1" type="radio" value="1" name="cb">Answer 1
                         </label></li>
                         <li class="checkbox"><label for="option2">
                             <input id="option2" type="checkbox" value="2" name="cb">Answer 2

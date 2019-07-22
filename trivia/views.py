@@ -69,6 +69,8 @@ def scores():
 #     }
 #     return render(request, 'game.html', context)
 
+#log in and log out
+
 def login_user(request):
 
     if request.method == 'POST':
