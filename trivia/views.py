@@ -17,10 +17,25 @@ correct_list = []
 
 def gamepage(request):
 
-    print("Viewed Gamepage")
+    print("---Viewed Gamepage---")
     for item in data['results']:            # get to the right list
         question = item['question']
-        print(question)
+        # print(question)
+
+        
+        # print(answers)
+
+    context = {
+        'trivia': question,
+        # 'answer0': answers[0],
+        # 'answer1': answers[1],
+        # 'answer2': answers[2],
+        # 'answer3': answers[3],
+    }
+
+def answer(request):
+    # user_answer = input("Type your answer here: ")
+    for item in data['results']:            # get to the right list
 
         correct = item['correct_answer']    # reference keys for correct answers
         choices = item['incorrect_answers'] # reverence keys for incorrect answers
@@ -28,41 +43,36 @@ def gamepage(request):
         for choice in choices:
             answers.append(choice)      # this adds the wrong answers to the list "answers"
         answers.append(correct)         # this adds the right answer to he list "answers"
-        random.shuffle(answers)         # this randomizes all the answers from the list "answers"
-        
-        print(answers)
-
+        random.shuffle(answers)         # this randomizes all the answers from the list "answers"    if answers[0] in correct:
+        correct_list.append(user_answer)
+    if answers[0] in correct:
+        print('---viewed answer 1---')
+        print("1 You got it!")
+        print("--------------------")
+    elif answers[1] in correct:
+        correct_list.append(user_answer)
+        print("2 You got it!")
+        print("--------------------")
+    elif answers[2] in correct:
+        correct_list.append(user_answer)
+        print("3 You got it!")
+        print("--------------------")    
+    elif answers[3] in correct:
+        correct_list.append(user_answer)
+        print("4 You got it!")
+        print("--------------------")    
+    else:
+        # print("Sorry. The answer is", correct + ".")
+        print("--------------------")
+    
+    # print(correct_list)
     context = {
-        'trivia': question,
+        # 'trivia': question,
         'answer0': answers[0],
         'answer1': answers[1],
         'answer2': answers[2],
         'answer3': answers[3],
     }
-
-    # user_answer = input("Type your answer here: ")
-    if answers[0] in correct:
-        correct_list.append(user_answer)
-        print("You got it!")
-        print("--------------------")
-    elif answers[1] in correct:
-        correct_list.append(user_answer)
-        print("You got it!")
-        print("--------------------")
-    elif answers[2] in correct:
-        correct_list.append(user_answer)
-        print("You got it!")
-        print("--------------------")    
-    elif answers[3] in correct:
-        correct_list.append(user_answer)
-        print("You got it!")
-        print("--------------------")    
-    else:
-        print("Sorry. The answer is", correct + ".")
-        print("--------------------")
-    
-    print(correct_list)
-
     return render(request, 'game.html', context)
 
 def scores():
