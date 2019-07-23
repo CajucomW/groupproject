@@ -61,8 +61,9 @@
             <div class="col-8 col-sm-6">
 <!--                                                    Display trivia questions here        -->
                                                     <p>{{ trivia }}</p>
-                <div class="row-3" style="background: orange;">
+                <div class="row-3" style="background: yellow;">
                     <div class="col-4 col-sm-6">
+<<<<<<< HEAD
 <!--                                                            Answers and buttons here-->
                                                             <div id="cb">
                 <div class="left">
@@ -91,11 +92,44 @@
                     </div>
                 </div>
             </div>
+=======
+
+<!--Answers and buttons here-->
+
+                      <form method="POST" action=".">
+                        {% csrf_token %}
+                        <input type="radio" name="a1" value="no">{{ answer0 }}
+                        <input type="radio" name="a1" value="no">{{ answer1 }}
+                        <input type="radio" name="a1" value="no">{{ answer2 }}
+                        <input type="radio" name="a1" value="no">{{ answer3 }}
+                        <button>Submit</button>
+                      </form>
+<!-- <label for="btn" class="label">{{ answer0 }}</label>
+<label for="btn" class="label">{{ answer1 }}</label>
+<label for="btn" class="label">{{ answer2 }}</label>
+<label for="btn" class="label">{{ answer3 }}</label>
+<input type="checkbox" id="btn"/>
+<div class="overlay">
+    <div class="popup">
+        <span class="title">Answer</span>
+        <span class= "answer"> {{ correct_answer }} </span>
+
+        <div class="social-buttons">
+          <label for="btn" class="red social">{{ next_question }}</label>
+>>>>>>> f65ffb460c4fbdb4cdbaf87421635c35ae1dac35
         </div>
     </div>
-</div>
+</div> -->
 
-<!--{% endblock content %}-->
+
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+ </div>
+
+{% endblock content %}
 
 
 <!-- Bootstrap core JavaScript -->
