@@ -1,11 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django import forms
 import requests
 import random
-from django.shortcuts import render
 
-response = requests.get('https://opentdb.com/api.php?amount=3&type=multiple')
+response = requests.get('https://opentdb.com/api.php?amount=1&type=multiple')
 data = response.json()
-user_answer = None
 
 correct_list = []
 # def welcome():
@@ -16,39 +15,95 @@ correct_list = []
 # welcome()
 
 def gamepage(request):
-    answers = []
     print("Viewed Gamepage")
     for item in data['results']:            # get to the right list
         question = item['question']
-        print(question)
-
         correct = item['correct_answer']    # reference keys for correct answers
         choices = item['incorrect_answers'] # reverence keys for incorrect answers
-
+        
+        answers = []        
         for choice in choices:
             answers.append(choice)      # this adds the wrong answers to the list "answers"
         answers.append(correct)         # this adds the right answer to he list "answers"
         random.shuffle(answers)         # this randomizes all the answers from the list "answers"
+        # correct_list.append(request.POST)
         
-        print(answers)
-        
-    user_answer = input("Type your answer here: ")
-    if user_answer in correct:
-        correct_list.append(user_answer)
-        print("You got it!")
-        print("--------------------")
-    else:
-        print("Sorry. The answer is", correct + ".")
-        print("--------------------")
-    
-    print(correct_list)
-    context = {
+        context = {
         'trivia': question,
         'answer0': answers[0],
         'answer1': answers[1],
         'answer2': answers[2],
         'answer3': answers[3],
     }
+        print(answers)
+        print(correct)
+        if 'a0' in request.POST:
+            print("checked a0")
+            answerzero = request.POST['a0']
+            print("---", answerzero, "---")
+            if answerzero == correct:
+                print("---Correct!---")
+        else:
+            print("---Sorry, wrong answer---")
+        if 'a1' in request.POST:
+            print("checked a1")
+            answerone = request.POST['a1']
+            print("---", answerone, "---")
+            if answerone == correct:
+                print("---Correct!---")
+        else:
+            print("---Sorry, wrong answer---")
+        if 'a2' in request.POST:
+            print("checked a2")
+            answertwo = request.POST['a2']
+            print("---", answertwo, "---")
+            if answertwo == correct:
+                print("---Correct!---")
+        else:
+            print("---Sorry, wrong answer---")
+        if 'a3' in request.POST:
+            print("checked a3")
+            answerthree = request.POST['a3']
+            print("---", answerthree, "---")
+            if answerthree == correct:
+                print("---Correct!---")
+        else:
+            print("---Sorry, wrong answer---")
+
+            # one = request.POST['answer1']
+            # if one in correct:
+            #     print("Correct1")
+            # two = request.POST['answer2']
+            # if two in correct:
+            #     print("Correct2")
+            # three = request.POST['answer3']
+            # if three in correct:
+            #     print("Correct3")
+
+
+        # print(correct)
+        # print(answers)
+    
+    # if request.method == 'POST':
+    #     if answer0 in correct:
+    #         print("---viewed 0---")
+    #         print("correct")
+    #         return redirect('/')
+    #     elif answer1 in correct:
+    #         print("---viewed 1---")
+    #         print("correct")
+    #         return redirect('/')  
+    #     elif answers2 in correct:
+    #         print("---viewed 2---")
+    #         print("correct")
+    #         return redirect('/')      
+    #     elif answers3 in correct:
+    #         print("---viewed 3---")
+    #         print("correct")
+    #         return redirect('/')
+    #     else:
+    #         print("Sorry. The answer is", correct + ".")
+    
     return render(request, 'game.html', context)
 
 def scores():
