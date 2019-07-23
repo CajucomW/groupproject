@@ -60,9 +60,18 @@
                                                     <p>{{ trivia }}</p>
                 <div class="row-3" style="background: yellow;">
                     <div class="col-4 col-sm-6">
-<!--                                                            Answers and buttons here-->
 
-<label for="btn" class="label">{{ answer0 }}</label>
+<!--Answers and buttons here-->
+
+                      <form method="POST" action=".">
+                        {% csrf_token %}
+                        <input type="radio" name="a1" value="no">{{ answer0 }}
+                        <input type="radio" name="a1" value="no">{{ answer1 }}
+                        <input type="radio" name="a1" value="no">{{ answer2 }}
+                        <input type="radio" name="a1" value="no">{{ answer3 }}
+                        <button>Submit</button>
+                      </form>
+<!-- <label for="btn" class="label">{{ answer0 }}</label>
 <label for="btn" class="label">{{ answer1 }}</label>
 <label for="btn" class="label">{{ answer2 }}</label>
 <label for="btn" class="label">{{ answer3 }}</label>
@@ -76,45 +85,9 @@
           <label for="btn" class="red social">{{ next_question }}</label>
         </div>
     </div>
-</div>
+</div> -->
 
 
-<!-- <div onclick="correct_answer();wrong_answer();">{{ answer0 }}</div>--> -->
-
-<!-- <div onclick="correct_answer();wrong_answer();">{{ answer1 }}</div>--> -->
-
-<!-- <div onclick="correct_answer();wrong_answer();">{{ answer2 }}</div> -->
-
-<!-- <div onclick="correct_answer();wrong_answer();">{{ answer3 }}</div> -->
-
-<!--To get user to next question-->
-
-<!-- <div onclick="next_question();">{{ next }}</div> -->
-
-
-            </div>
-
-<!--              <div id="cb">-->
-<!--                <div id="target">-->
-<!--                    <ul>-->
-<!--                        <li class="checkbox"><label for="option1">-->
-<!--                            <input id="option1" type="checkbox" value="1" name="cb">{{ answer0 }}-->
-<!--                        </label></li>-->
-<!--                        <li class="checkbox"><label for="option2">-->
-<!--                            <input id="option2" type="checkbox" value="2" name="cb">{{ answer1 }}-->
-<!--                        </label></li>-->
-<!--                        <li class="checkbox"><label for="option3">-->
-<!--                            <input id="option3" type="checkbox" value="3" name="cb">{{ answer2 }}-->
-<!--                        </label></li>-->
-<!--                        <li class="checkbox"><label for="option4">-->
-<!--                            <input id="option3" type="checkbox" value="4" name="cb">{{ answer3 }}-->
-<!--                        </label></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
-                      <div>
-<!--                <button id="submit" type="submit">Submit</button>-->
-<!--            </div>-->
                    </div>
                </div>
            </div>
