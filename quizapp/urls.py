@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from trivia import views
+from trivia.views import login_user, logout_user
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.gamepage),
     path('game/', views.gamepage),
+    path('game/', views.gamepage),
+    path('trivia/', view=login_user, name='login'),
+    path('trivia/', view=logout_user, name='logout'),
 ]

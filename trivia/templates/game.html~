@@ -11,7 +11,7 @@
   <title>Trivia Challenge</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">   
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../static/vendor/bootstrap/css/ah.css" rel="stylesheet"/>
 
 </head>
@@ -61,7 +61,6 @@
                 <div class="row-3" style="background: yellow;">
                     <div class="col-4 col-sm-6">
 <!--                                                            Answers and buttons here-->
-
 
 <label for="btn" class="label">{{ answer0 }}</label>
 <label for="btn" class="label">{{ answer1 }}</label>
