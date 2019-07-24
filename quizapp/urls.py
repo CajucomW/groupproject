@@ -20,13 +20,10 @@ from trivia.views import login_user, logout_user
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.gamepage),
     path('game/', views.gamepage),
-<<<<<<< HEAD
     path('correct/', views.correct),
     path('incorrect/', views.incorrect),
-=======
-    path('game/', views.gamepage),
-    path('trivia/', view=login_user, name='login'),
-    path('trivia/', view=logout_user, name='logout'),
->>>>>>> master
+    path('login/', views.login_user),
+    path('login/', views.logout_user),
 ]

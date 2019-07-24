@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 from django.shortcuts import render, redirect
-=======
-from django.shortcuts import render
->>>>>>> master
 from django import forms
 import requests
 import random
@@ -11,12 +7,6 @@ response = requests.get('https://opentdb.com/api.php?amount=1&type=multiple')
 data = response.json()
 
 correct_list = []
-# def welcome():
-
-#     print("Welcome to Our Group Project!")
-#     username = input("Please enter a Username: ")
-
-# welcome()
 
 def gamepage(request):
     print("Viewed Gamepage")
@@ -90,41 +80,6 @@ def gamepage(request):
                 print("---Sorry, wrong answer---")
                 return redirect('incorrect/')
 
-            # one = request.POST['answer1']
-            # if one in correct:
-            #     print("Correct1")
-            # two = request.POST['answer2']
-            # if two in correct:
-            #     print("Correct2")
-            # three = request.POST['answer3']
-            # if three in correct:
-            #     print("Correct3")
-
-
-        # print(correct)
-        # print(answers)
-    
-    # if request.method == 'POST':
-    #     if answer0 in correct:
-    #         print("---viewed 0---")
-    #         print("correct")
-    #         return redirect('/')
-    #     elif answer1 in correct:
-    #         print("---viewed 1---")
-    #         print("correct")
-    #         return redirect('/')  
-    #     elif answers2 in correct:
-    #         print("---viewed 2---")
-    #         print("correct")
-    #         return redirect('/')      
-    #     elif answers3 in correct:
-    #         print("---viewed 3---")
-    #         print("correct")
-    #         return redirect('/')
-    #     else:
-    #         print("Sorry. The answer is", correct + ".")
-    
-
     return render(request, 'game.html', context)
 
 def scores():
@@ -168,4 +123,4 @@ def logout_user(request):
     logout(request)
     messages.success(request, 'You have been logged out!')
     print('logout function working')
-    return redirect('login')
+    return redirect('login/')
