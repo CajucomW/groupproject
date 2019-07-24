@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 from django.shortcuts import render, redirect
+=======
+from django.shortcuts import render
+>>>>>>> master
 from django import forms
 import requests
 import random
@@ -11,7 +15,7 @@ correct_list = []
 
 #     print("Welcome to Our Group Project!")
 #     username = input("Please enter a Username: ")
-    
+
 # welcome()
 
 def gamepage(request):
@@ -120,6 +124,7 @@ def gamepage(request):
     #     else:
     #         print("Sorry. The answer is", correct + ".")
     
+
     return render(request, 'game.html', context)
 
 def scores():
@@ -139,3 +144,28 @@ def incorrect(request):
 # gamepage()
 
 # scores()
+
+#log in and log out
+
+def login_user(request):
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            messages.success(request, 'You have successfully logged in')
+            return redirect("index")
+        else:
+            messages.success(request, 'Error logging in')
+            return redirect('login')
+    else:
+        return render(request, 'login.html', {})
+
+
+def logout_user(request):
+    logout(request)
+    messages.success(request, 'You have been logged out!')
+    print('logout function working')
+    return redirect('login')

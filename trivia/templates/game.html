@@ -13,8 +13,13 @@
 
   <title>Trivia Challenge</title>-->
 
+<<<<<<< HEAD
    <!-- Bootstrap core CSS  -->
   <!-- <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">   
+=======
+  <!-- Bootstrap core CSS -->
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+>>>>>>> master
   <link href="../static/vendor/bootstrap/css/ah.css" rel="stylesheet"/>
 
 </head>
@@ -43,6 +48,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact-Us</a>
+            <li class="nav-item">
+            <a class="nav-link" href="login.html">Log In</a>
+          </li>
           </li>
         </ul>
       </div>
@@ -63,6 +71,7 @@
                                                     <p>{{ trivia }}</p>
                 <div class="row-3" style="background: yellow;">
                     <div class="col-4 col-sm-6">
+<<<<<<< HEAD
 
 <!--Answers and buttons here-->
 
@@ -113,6 +122,68 @@
             
 
                     </div>
+=======
+<<<<<<< HEAD
+<!--                                                            Answers and buttons here-->
+                                                            <div id="cb">
+                <div class="left">
+
+                </div>
+                <div class="right">
+                    <ul>
+                        <li class="radio"><label for="option1">
+                            <input id="option1" type="radio" value="1" name="cb">{{ answer0 }}
+                        </label></li>
+                        <li class="radio"><label for="option2">
+                            <input id="option2" type="radio" value="2" name="cb">{{ answer1 }}
+                        </label></li>
+                        <li class="radio"><label for="option3">
+                            <input id="option3" type="radio" value="3" name="cb">{{ answer2 }}
+                        </label></li>
+                        <li class="radio"><label for="option4">
+                            <input id="option3" type="radio" value="4" name="cb">{{ answer3 }}
+                        </label></li>
+                    </ul>
+                </div>
+            </div>
+                       <div>
+                <button id="submit" type="submit">Submit</button>
+            </div>
+                    </div>
+                </div>
+            </div>
+=======
+
+<!--Answers and buttons here-->
+
+                      <form method="POST" action=".">
+                        {% csrf_token %}
+                        <input type="radio" name="a1" value="no">{{ answer0 }}
+                        <input type="radio" name="a1" value="no">{{ answer1 }}
+                        <input type="radio" name="a1" value="no">{{ answer2 }}
+                        <input type="radio" name="a1" value="no">{{ answer3 }}
+                        <button>Submit</button>
+                      </form>
+<!-- <label for="btn" class="label">{{ answer0 }}</label>
+<label for="btn" class="label">{{ answer1 }}</label>
+<label for="btn" class="label">{{ answer2 }}</label>
+<label for="btn" class="label">{{ answer3 }}</label>
+<input type="checkbox" id="btn"/>
+<div class="overlay">
+    <div class="popup">
+        <span class="title">Answer</span>
+        <span class= "answer"> {{ correct_answer }} </span>
+
+        <div class="social-buttons">
+          <label for="btn" class="red social">{{ next_question }}</label>
+>>>>>>> f65ffb460c4fbdb4cdbaf87421635c35ae1dac35
+        </div>
+    </div>
+</div> -->
+
+
+                   </div>
+>>>>>>> master
                </div>
            </div>
        </div>
