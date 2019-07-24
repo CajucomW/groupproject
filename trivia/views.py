@@ -34,7 +34,12 @@ def gamepage(request):
         'answer1': answers[1],
         'answer2': answers[2],
         'answer3': answers[3],
+        'correct': correct,
     }
+
+################### PROBLEM LIST ###################
+# I need a way to refresh each page so new questions come up
+
         print(answers)
         print(correct)
         if 'a0' in request.POST:
@@ -43,32 +48,43 @@ def gamepage(request):
             print("---", answerzero, "---")
             if answerzero == correct:
                 print("---Correct!---")
-        else:
-            print("---Sorry, wrong answer---")
+                return redirect('correct/')
+            else:
+                print("---Sorry, wrong answer---")
+                return redirect('incorrect/')
+        
         if 'a1' in request.POST:
             print("checked a1")
             answerone = request.POST['a1']
             print("---", answerone, "---")
             if answerone == correct:
                 print("---Correct!---")
-        else:
-            print("---Sorry, wrong answer---")
+                return redirect('correct/')
+            else:
+                print("---Sorry, wrong answer---")
+                return redirect('incorrect/')
+
         if 'a2' in request.POST:
             print("checked a2")
             answertwo = request.POST['a2']
             print("---", answertwo, "---")
             if answertwo == correct:
                 print("---Correct!---")
-        else:
-            print("---Sorry, wrong answer---")
+                return redirect('correct/')
+            else:
+                print("---Sorry, wrong answer---")
+                return redirect('incorrect/')
+
         if 'a3' in request.POST:
             print("checked a3")
             answerthree = request.POST['a3']
             print("---", answerthree, "---")
             if answerthree == correct:
                 print("---Correct!---")
-        else:
-            print("---Sorry, wrong answer---")
+                return redirect('correct/')
+            else:
+                print("---Sorry, wrong answer---")
+                return redirect('incorrect/')
 
             # one = request.POST['answer1']
             # if one in correct:
@@ -111,6 +127,14 @@ def scores():
     correct_number = len(correct_list)
     score = (correct_number * 100) / 3
     print("You scored", score, "%")
+
+def correct(request):
+    context = {}
+    return render(request, 'correct.html', context)
+
+def incorrect(request):
+    context = {}
+    return render(request, 'incorrect.html', context)
 
 # gamepage()
 

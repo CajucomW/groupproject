@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,18 +11,18 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Trivia Challenge</title>
+  <title>Trivia Challenge</title>-->
 
-  <!-- Bootstrap core CSS -->
-  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">   
+   <!-- Bootstrap core CSS  -->
+  <!-- <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">   
   <link href="../static/vendor/bootstrap/css/ah.css" rel="stylesheet"/>
 
 </head>
 
-<body>
+<body> -->
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+   <!-- Navigation  -->
+<!--  <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
     <div class="container">
       <a class="navbar-brand" href="#">Trivia Challenge</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,11 +47,11 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->
 
 
-<!--{% extends "base.html" %}-->
-{% block content %}
+
+
 <!--Trivia game here-->
 
 <div class="row-1" style="background: yellow;">
@@ -70,32 +73,53 @@
                         <input type="radio" name="a2" value="{{ answer2 }}">{{ answer2 }}
                         <input type="radio" name="a3" value="{{ answer3 }}">{{ answer3 }}
                         <button>Submit</button>
+                        <!-- {% for item in data %}
+                          <p>item</p>
+
+                          {% if answer0 in correct %}
+                            <p>Correct! The answer is {{ correct }}</p>
+                          {% endif %}
+
+                          {% if answer1 in correct %}
+                            <p>Correct!</p>
+                          {% endif %}
+
+                          {% if answer2 in correct %}
+                            <p>Correct!</p>
+                          {% endif %}
+
+                          {% if answer3 in correct %}
+                            <p>Correct!</p>
+                          {% endif %}
+                        {% endfor %} -->
                       </form>
-<!-- <label for="btn" class="label">{{ answer0 }}</label>
-<label for="btn" class="label">{{ answer1 }}</label>
-<label for="btn" class="label">{{ answer2 }}</label>
-<label for="btn" class="label">{{ answer3 }}</label>
-<input type="checkbox" id="btn"/>
-<div class="overlay">
-    <div class="popup">
-        <span class="title">Answer</span>
-        <span class= "answer"> {{ correct_answer }} </span>
-        
-        <div class="social-buttons">
-          <label for="btn" class="red social">{{ next_question }}</label>
-        </div>
-    </div>
-</div> -->
+                    <!-- <form method="POST" action=".">
+                    <label for="btn" class="label" name="a0">{{ answer0 }}</label>
+                    <label for="btn" class="label" name="a1">{{ answer1 }}</label>
+                    <label for="btn" class="label" name="a2">{{ answer2 }}</label>
+                    <label for="btn" class="label" name="a3">{{ answer3 }}</label>
+                    <input type="checkbox" id="btn"/>
+                    <div class="overlay">
+                        <div class="popup">
+                            <span class="title">Answer</span>
+                            <span class= "answer"> {{ correct }} </span>
+                            
+                            <div class="social-buttons">
+                              <label for="btn" class="red social">{{ next_question }}</label>
+                            </div>
+                        </div>
+                      </form> -->
+                    
             
 
-                   </div>
+                    </div>
                </div>
            </div>
        </div>
    </div>
  </div>
 
-{% endblock content %}
+{% endblock %}
 
 
 <!-- Bootstrap core JavaScript -->
