@@ -1,64 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Trivia Challenge</title>-->
-
-<<<<<<< HEAD
-   <!-- Bootstrap core CSS  -->
-  <!-- <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">   
-=======
-  <!-- Bootstrap core CSS -->
-  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
->>>>>>> master
-  <link href="../static/vendor/bootstrap/css/ah.css" rel="stylesheet"/>
-
-</head>
-
-<body> -->
-
-   <!-- Navigation  -->
-<!--  <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Trivia Challenge</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Trivia</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Stats</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact-Us</a>
-            <li class="nav-item">
-            <a class="nav-link" href="login.html">Log In</a>
-          </li>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
-
-
-
 
 <!--Trivia game here-->
 
@@ -67,11 +9,12 @@
                                                             <h1>Let's get started!</h1>
         <div class="row-2" style="background: blue;">
             <div class="col-8 col-sm-6">
-<!--                                                    Display trivia questions here        -->
+
+<!--Display trivia questions here-->
+
                                                     <p>{{ trivia }}</p>
                 <div class="row-3" style="background: yellow;">
                     <div class="col-4 col-sm-6">
-<<<<<<< HEAD
 
 <!--Answers and buttons here-->
 
@@ -82,108 +25,8 @@
                         <input type="radio" name="a2" value="{{ answer2 }}">{{ answer2 }}
                         <input type="radio" name="a3" value="{{ answer3 }}">{{ answer3 }}
                         <button>Submit</button>
-                        <!-- {% for item in data %}
-                          <p>item</p>
-
-                          {% if answer0 in correct %}
-                            <p>Correct! The answer is {{ correct }}</p>
-                          {% endif %}
-
-                          {% if answer1 in correct %}
-                            <p>Correct!</p>
-                          {% endif %}
-
-                          {% if answer2 in correct %}
-                            <p>Correct!</p>
-                          {% endif %}
-
-                          {% if answer3 in correct %}
-                            <p>Correct!</p>
-                          {% endif %}
-                        {% endfor %} -->
                       </form>
-                    <!-- <form method="POST" action=".">
-                    <label for="btn" class="label" name="a0">{{ answer0 }}</label>
-                    <label for="btn" class="label" name="a1">{{ answer1 }}</label>
-                    <label for="btn" class="label" name="a2">{{ answer2 }}</label>
-                    <label for="btn" class="label" name="a3">{{ answer3 }}</label>
-                    <input type="checkbox" id="btn"/>
-                    <div class="overlay">
-                        <div class="popup">
-                            <span class="title">Answer</span>
-                            <span class= "answer"> {{ correct }} </span>
-                            
-                            <div class="social-buttons">
-                              <label for="btn" class="red social">{{ next_question }}</label>
-                            </div>
-                        </div>
-                      </form> -->
-                    
-            
-
-                    </div>
-=======
-<<<<<<< HEAD
-<!--                                                            Answers and buttons here-->
-                                                            <div id="cb">
-                <div class="left">
-
-                </div>
-                <div class="right">
-                    <ul>
-                        <li class="radio"><label for="option1">
-                            <input id="option1" type="radio" value="1" name="cb">{{ answer0 }}
-                        </label></li>
-                        <li class="radio"><label for="option2">
-                            <input id="option2" type="radio" value="2" name="cb">{{ answer1 }}
-                        </label></li>
-                        <li class="radio"><label for="option3">
-                            <input id="option3" type="radio" value="3" name="cb">{{ answer2 }}
-                        </label></li>
-                        <li class="radio"><label for="option4">
-                            <input id="option3" type="radio" value="4" name="cb">{{ answer3 }}
-                        </label></li>
-                    </ul>
-                </div>
-            </div>
-                       <div>
-                <button id="submit" type="submit">Submit</button>
-            </div>
-                    </div>
-                </div>
-            </div>
-=======
-
-<!--Answers and buttons here-->
-
-                      <form method="POST" action=".">
-                        {% csrf_token %}
-                        <input type="radio" name="a1" value="no">{{ answer0 }}
-                        <input type="radio" name="a1" value="no">{{ answer1 }}
-                        <input type="radio" name="a1" value="no">{{ answer2 }}
-                        <input type="radio" name="a1" value="no">{{ answer3 }}
-                        <button>Submit</button>
-                      </form>
-<!-- <label for="btn" class="label">{{ answer0 }}</label>
-<label for="btn" class="label">{{ answer1 }}</label>
-<label for="btn" class="label">{{ answer2 }}</label>
-<label for="btn" class="label">{{ answer3 }}</label>
-<input type="checkbox" id="btn"/>
-<div class="overlay">
-    <div class="popup">
-        <span class="title">Answer</span>
-        <span class= "answer"> {{ correct_answer }} </span>
-
-        <div class="social-buttons">
-          <label for="btn" class="red social">{{ next_question }}</label>
->>>>>>> f65ffb460c4fbdb4cdbaf87421635c35ae1dac35
-        </div>
-    </div>
-</div> -->
-
-
                    </div>
->>>>>>> master
                </div>
            </div>
        </div>
@@ -191,12 +34,3 @@
  </div>
 
 {% endblock %}
-
-
-<!-- Bootstrap core JavaScript -->
-  <script src="../static/vendor/jquery/jquery.slim.min.js"></script>
-  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-</body>
-
-</html>

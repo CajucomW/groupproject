@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect
-from django.shortcuts import render
 from django import forms
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import render, redirect
 import requests
 import random
 
@@ -11,12 +9,6 @@ response = requests.get('https://opentdb.com/api.php?amount=1&type=multiple')
 data = response.json()
 
 correct_list = []
-# def welcome():
-
-#     print("Welcome to Our Group Project!")
-#     username = input("Please enter a Username: ")
-
-# welcome()
 
 def gamepage(request):
     print("Viewed Gamepage")
@@ -90,41 +82,6 @@ def gamepage(request):
                 print("---Sorry, wrong answer---")
                 return redirect('incorrect/')
 
-            # one = request.POST['answer1']
-            # if one in correct:
-            #     print("Correct1")
-            # two = request.POST['answer2']
-            # if two in correct:
-            #     print("Correct2")
-            # three = request.POST['answer3']
-            # if three in correct:
-            #     print("Correct3")
-
-
-        # print(correct)
-        # print(answers)
-    
-    # if request.method == 'POST':
-    #     if answer0 in correct:
-    #         print("---viewed 0---")
-    #         print("correct")
-    #         return redirect('/')
-    #     elif answer1 in correct:
-    #         print("---viewed 1---")
-    #         print("correct")
-    #         return redirect('/')  
-    #     elif answers2 in correct:
-    #         print("---viewed 2---")
-    #         print("correct")
-    #         return redirect('/')      
-    #     elif answers3 in correct:
-    #         print("---viewed 3---")
-    #         print("correct")
-    #         return redirect('/')
-    #     else:
-    #         print("Sorry. The answer is", correct + ".")
-    
-
     return render(request, 'game.html', context)
 
 def scores():
@@ -146,6 +103,23 @@ def incorrect(request):
 # scores()
 
 #log in and log out
+
+def login_user(request):
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            messages.success(request, 'You have successfully logged in')
+            return redirect("index")
+        else:
+            messages.success(request, 'Error logging in')
+            return redirect('login')
+    else:
+        return render(request, 'login.html', {})
+
 
 def login_user(request):
 
