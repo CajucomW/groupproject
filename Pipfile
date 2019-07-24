@@ -6,11 +6,8 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
+djano = "*"
 django = "*"
-<<<<<<< HEAD
-=======
-request = "*"
->>>>>>> f65ffb460c4fbdb4cdbaf87421635c35ae1dac35
 requests = "*"
 
 [requires]
