@@ -1,11 +1,14 @@
+<<<<<<< HEAD
+from django.shortcuts import render, redirect
+=======
 from django.shortcuts import render
+>>>>>>> master
 from django import forms
 import requests
 import random
 
 response = requests.get('https://opentdb.com/api.php?amount=1&type=multiple')
 data = response.json()
-user_answer = None
 
 correct_list = []
 # def welcome():
@@ -16,54 +19,112 @@ correct_list = []
 # welcome()
 
 def gamepage(request):
-
-    print("---Viewed Gamepage---")
+    print("Viewed Gamepage")
     for item in data['results']:            # get to the right list
         question = item['question']
-
-    for item in data['results']:            # get to the right list
         correct = item['correct_answer']    # reference keys for correct answers
         choices = item['incorrect_answers'] # reverence keys for incorrect answers
-        answers = []
+        
+        answers = []        
         for choice in choices:
             answers.append(choice)      # this adds the wrong answers to the list "answers"
         answers.append(correct)         # this adds the right answer to he list "answers"
-<<<<<<< HEAD
         random.shuffle(answers)         # this randomizes all the answers from the list "answers"
-
-        print(answers)
-
-        user_answer = input("Type your answer here: ")
-        if user_answer in correct:
-            correct_list.append(user_answer)
-            print("You got it!")
-        else:
-            print("Sorry. The answer is", correct + ".")
-
-        # print(correct_list)
-    context = {
+        # correct_list.append(request.POST)
+        
+        context = {
         'trivia': question,
         'answer0': answers[0],
         'answer1': answers[1],
         'answer2': answers[2],
         'answer3': answers[3],
+        'correct': correct,
     }
-=======
-        random.shuffle(answers)         # this randomizes all the answers from the list "answers"    if answers[0] in correct:
-        correct_list.append(user_answer)
-        
-        context = {
-            'trivia': question,
-            'answer0': answers[0],
-            'answer1': answers[1],
-            'answer2': answers[2],
-            'answer3': answers[3],
-        }
 
-    if request.method == 'POST':
-        
+################### PROBLEM LIST ###################
+# I need a way to refresh each page so new questions come up
 
->>>>>>> f65ffb460c4fbdb4cdbaf87421635c35ae1dac35
+        print(answers)
+        print(correct)
+        if 'a0' in request.POST:
+            print("checked a0")
+            answerzero = request.POST['a0']
+            print("---", answerzero, "---")
+            if answerzero == correct:
+                print("---Correct!---")
+                return redirect('correct/')
+            else:
+                print("---Sorry, wrong answer---")
+                return redirect('incorrect/')
+        
+        if 'a1' in request.POST:
+            print("checked a1")
+            answerone = request.POST['a1']
+            print("---", answerone, "---")
+            if answerone == correct:
+                print("---Correct!---")
+                return redirect('correct/')
+            else:
+                print("---Sorry, wrong answer---")
+                return redirect('incorrect/')
+
+        if 'a2' in request.POST:
+            print("checked a2")
+            answertwo = request.POST['a2']
+            print("---", answertwo, "---")
+            if answertwo == correct:
+                print("---Correct!---")
+                return redirect('correct/')
+            else:
+                print("---Sorry, wrong answer---")
+                return redirect('incorrect/')
+
+        if 'a3' in request.POST:
+            print("checked a3")
+            answerthree = request.POST['a3']
+            print("---", answerthree, "---")
+            if answerthree == correct:
+                print("---Correct!---")
+                return redirect('correct/')
+            else:
+                print("---Sorry, wrong answer---")
+                return redirect('incorrect/')
+
+            # one = request.POST['answer1']
+            # if one in correct:
+            #     print("Correct1")
+            # two = request.POST['answer2']
+            # if two in correct:
+            #     print("Correct2")
+            # three = request.POST['answer3']
+            # if three in correct:
+            #     print("Correct3")
+
+
+        # print(correct)
+        # print(answers)
+    
+    # if request.method == 'POST':
+    #     if answer0 in correct:
+    #         print("---viewed 0---")
+    #         print("correct")
+    #         return redirect('/')
+    #     elif answer1 in correct:
+    #         print("---viewed 1---")
+    #         print("correct")
+    #         return redirect('/')  
+    #     elif answers2 in correct:
+    #         print("---viewed 2---")
+    #         print("correct")
+    #         return redirect('/')      
+    #     elif answers3 in correct:
+    #         print("---viewed 3---")
+    #         print("correct")
+    #         return redirect('/')
+    #     else:
+    #         print("Sorry. The answer is", correct + ".")
+    
+
     return render(request, 'game.html', context)
 
 def scores():
@@ -72,18 +133,17 @@ def scores():
     score = (correct_number * 100) / 3
     print("You scored", score, "%")
 
+def correct(request):
+    context = {}
+    return render(request, 'correct.html', context)
+
+def incorrect(request):
+    context = {}
+    return render(request, 'incorrect.html', context)
+
 # gamepage()
 
 # scores()
-<<<<<<< HEAD
-
-
-
-# def gamepage(request):
-#     context = {
-#         trivia =
-#     }
-#     return render(request, 'game.html', context)
 
 #log in and log out
 
@@ -109,5 +169,3 @@ def logout_user(request):
     messages.success(request, 'You have been logged out!')
     print('logout function working')
     return redirect('login')
-=======
->>>>>>> f65ffb460c4fbdb4cdbaf87421635c35ae1dac35
