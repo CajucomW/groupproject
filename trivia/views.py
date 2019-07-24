@@ -33,8 +33,9 @@ def gamepage(request):
         'correct': correct,
     }
 
-################### PROBLEM LIST ###################
+################### TODO PROBLEM LIST ###################
 # I need a way to refresh each page so new questions come up
+## Fix funky signs like this: "&quot;Futurama&quot; air?"
 
         print(answers)
         print(correct)
