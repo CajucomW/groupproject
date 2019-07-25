@@ -3,13 +3,27 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-def create_user(data):
-    user =  User.objects.create_user(username=data['username'],
-                            email=data['email'],
-                            password=data['password'],
-                            first_name=data['first_name'],
-                            last_name=data['last_name']
-                            )
-    user.is_admin=False
-    user.is_staff=False
-    user.save()
+class QuestionAnswered(models.Model):
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+    )
+    was_right = models.BooleanField()
+
+
+# How to use this SOB
+# in views.py:
+# Record a user answered something correctly
+# QuestionAnswered.objects.create(
+#    user=request.user,
+#    was_right=True,
+# )
+
+# Getting "correct count"
+# number_they_got_right = QuestionAnswered.objects.filter(
+#    user=request.user,
+#    was_right=True,
+# ).count()
+
+
+

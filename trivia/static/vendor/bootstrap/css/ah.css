@@ -1,3 +1,4 @@
+
 .row-1{
     border-radius: 25px;
         border: 2px solid #73AD21;
@@ -7,28 +8,33 @@
         position: absolute;
         top: 100px;
         left: 500px;
+        background: yellow;
       }
 
-.row-2{
+.triviaquestion{
         border-radius: 25px;
         border: 2px solid #73AD21;
-        padding: 20px; 
-        width: 1000px;
-        height: 175px; 
+        padding: 15px; 
+        width: 500px;
+        height: 250px; 
         position: relative;
-        top: 60px;
-        right: 300px;
+        top: 95px;
+        right: 50px;
+        font-size: 16pt;
+        background: blue;
+        text-align: center;
       }
   
 .row-3{
         border-radius: 25px;
         border: 2px solid #73AD21;
         padding: 20px; 
-        width: 800px;
-        height: 275px; 
+        width: 700px;
+        height: 175px; 
         position: absolute;
-        top: 175px;
-        left: 95px;
+        top: 250px;
+        left: -125px;
+        text-align: relative;
        } 
        
 body {
@@ -221,4 +227,18 @@ img {
         opacity: 1;
     }
 }
-Resources
+.data {
+    color: black;
+
+}
+
+body {
+    color: black;
+}
+
+/*.triviaquestion {*/
+/*    font-size: 16pt;*/
+/*    background: blue;*/
+/*}*/
+
+
