@@ -41,7 +41,9 @@ def gamepage(request):
     }
 
 ################### TODO PROBLEM LIST ###################
-# Fix funky signs like this: "&quot;Futurama&quot; air?"
+# correct/incorrect answers broke when random questions 
+# was fixed
+
         print(question)
         print(answers)
         print(correct)
