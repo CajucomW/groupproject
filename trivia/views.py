@@ -5,12 +5,16 @@ from django.contrib.auth.forms import UserCreationForm
 import requests
 import random
 
-response = requests.get('https://opentdb.com/api.php?amount=1&type=multiple')
-data = response.json()
+
+from html.parser import HTMLParser
 
 correct_list = []
 
 def gamepage(request):
+
+    response = requests.get('https://opentdb.com/api.php?amount=1&type=multiple')
+    data = response.json()
+    
     print("Viewed Gamepage")
     for item in data['results']:            # get to the right list
         question = item['question']
@@ -23,7 +27,10 @@ def gamepage(request):
         answers.append(correct)         # this adds the right answer to he list "answers"
         random.shuffle(answers)         # this randomizes all the answers from the list "answers"
         # correct_list.append(request.POST)
-        
+
+        h = HTMLParser()
+        question = h.unescape(question)
+
         context = {
         'trivia': question,
         'answer0': answers[0],
@@ -33,9 +40,11 @@ def gamepage(request):
         'correct': correct,
     }
 
-################### PROBLEM LIST ###################
-# I need a way to refresh each page so new questions come up
+################### TODO PROBLEM LIST ###################
+# correct/incorrect answers broke when random questions 
+# was fixed
 
+        print(question)
         print(answers)
         print(correct)
         if 'a0' in request.POST:
