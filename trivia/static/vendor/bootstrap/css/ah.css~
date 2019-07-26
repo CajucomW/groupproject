@@ -18,7 +18,7 @@
         width: 500px;
         height: 250px; 
         position: relative;
-        top: 105px;
+        top: 95px;
         right: 50px;
         font-size: 16pt;
         background: blue;

@@ -9,6 +9,7 @@
         top: 100px;
         left: 500px;
         background: yellow;
+        text-align: center;
       }
 
 .triviaquestion{
@@ -34,7 +35,8 @@
         position: absolute;
         top: 250px;
         left: -125px;
-        text-align: relative;
+        text-align: center;
+        background: yellow;
        } 
        
 body {
