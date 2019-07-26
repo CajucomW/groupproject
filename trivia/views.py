@@ -49,6 +49,9 @@ def gamepage(request):
             h = HTMLParser()
             answers = h.unescape(answers)
 
+            print(answers)
+            print(correct)
+
             context = {   
             'trivia': question,
             'answer0': answers[0],
@@ -58,8 +61,7 @@ def gamepage(request):
             'correct': correct,
         }
         # return render(request, 'game.html', context)
-            print(answers)
-            print(correct)
+
     else:
         # for item in data['results']:
         correct = request.session['correct_answer']    # reference keys for correct answers
@@ -234,7 +236,12 @@ def correct(request):
     return render(request, 'correct.html', context)
 
 def incorrect(request):
-    context = {}
+    
+    correct = request.session['correct_answer']    # reference keys for correct answers
+
+    context = {
+    'correct': correct,
+    }
     return render(request, 'incorrect.html', context)
 
 # gamepage()
