@@ -26,10 +26,7 @@ urlpatterns = [
     path('correct/', views.correct),
     path('incorrect/', views.incorrect),
     path('game/', views.gamepage),
-    path('login/', views.login_user, name='login'),
-    path('login/', views.logout_user, name='logout'),
     path('signup/', views.signup, name='signup'),
     path('login/', views.login_user),
     path('login/', views.logout_user),
-
 ]

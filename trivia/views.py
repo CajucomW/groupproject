@@ -299,9 +299,19 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('home')
+#            changed redirect from home to trivia game
+            return redirect('trivia')
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
     
-
+def create_user(data):
+    user =  User.objects.create_user(username=data['username'],
+                            email=data['email'],
+                            password=data['password'],
+                            first_name=data['first_name'],
+                            last_name=data['last_name']
+                            )
+    user.is_admin=False
+    user.is_staff=False
+    user.save()
