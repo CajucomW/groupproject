@@ -25,7 +25,9 @@ SECRET_KEY = '+6dp=v)ehkmn+^qf5z9e-s*d0u!+!sl-7g75$r_vv8_e9@ds5j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    morning-falls-60818.herokuapp.com
+]
 
 
 # Application definition
