@@ -12,6 +12,7 @@
 
   <!-- Bootstrap core CSS -->
   <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap/css/ah.css" rel="stylesheet"/>
 
 </head>
 
@@ -27,18 +28,18 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="base.html">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Trivia</a>
+            <a class="nav-link" href="/templates/game.html">Trivia</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Stats</a>
+            <a class="nav-link" href="/templates/signup.html">Sign up</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact-Us</a>
+            <a class="nav-link" href="/templatslogin.html">Login</a>
           </li>
         </ul>
       </div>
@@ -48,26 +49,6 @@
 
 {% block content %}
 {% endblock content %}
-
-<!--  <!-- Page Content -->
-<!--  <div class="container">-->
-<!--    <div class="row">-->
-<!--      <div class="col-lg-12 text-center">-->
-<!--        <h1 class="mt-5">Welcome to Trivia Challenge</h1>-->
-<!--        <p class="lead">Lets get started!</p>-->
-<!--         <ol class="list-unstyled">-->
-<!--            <form>-->
-<!--                <fieldset>-->
-<!--                    <legend>Hi! Please enter your name and eamil address</legend>-->
-<!--                    <li><label>Username: <input type="text"></label></li>-->
-<!--                    <li><label>email: <input type="email"></label></li>-->
-<!--                    <li><input type="submit" value="Submit"></li>-->
-<!--                </fieldset>-->
-<!--            </form>-->
-<!--        </ol>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
 
   <!-- Bootstrap core JavaScript -->
   <script src="../static/vendor/jquery/jquery.slim.min.js"></script>

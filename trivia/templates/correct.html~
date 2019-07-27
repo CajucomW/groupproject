@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row-4">
+<h1>CORRECT!!!</h1>
+<a href="http://127.0.0.1:8000/">Click</a>
+</div>
+{% endblock %}
+

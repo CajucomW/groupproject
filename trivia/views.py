@@ -4,6 +4,8 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 import requests
 import random
+from trivia.models import QuestionAnswered 
+
 # This code fixes the 'double' escape problem
 # that produces garbage text during ' and "
 from html.parser import HTMLParser
@@ -82,6 +84,7 @@ def gamepage(request):
         'answer2': answers[2],
         'answer3': answers[3],
         'correct': correct,
+        'number_already_answered': QuestionAnswered.objects.filter().count(),
     }
 
         print(answers)
@@ -315,3 +318,21 @@ def create_user(data):
     user.is_admin=False
     user.is_staff=False
     user.save()
+
+#            Record user answers
+
+def fraction(request):
+    QuestionAnswered.objects.create(
+        user=request.user,
+        was_right=True,
+    )
+    QuestionAnswered.objects.count()
+ 
+#            Getting "correct count"
+
+    number_they_got_right = QuestionAnswered.objects.filter(
+        user=request.user,
+        was_right=True,
+    ).count()
+    
+    return render(request, 'game.html', context)

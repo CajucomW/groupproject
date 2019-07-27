@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
+
 # Create your models here.
 
 class QuestionAnswered(models.Model):
@@ -9,6 +11,12 @@ class QuestionAnswered(models.Model):
         on_delete=models.CASCADE,
     )
     was_right = models.BooleanField()
+    
+#    answer = models.OneToMany(
+#        User,
+#        username = was_right
+#    
+#    )
 
 
 # How to use this SOB
