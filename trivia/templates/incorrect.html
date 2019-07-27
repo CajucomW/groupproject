@@ -3,7 +3,10 @@
 {% block content %}
 
 <div class="row incorrect">
-<h1>Sorry! You chose the wrong answer. </h1>
-<a href="http://127.0.0.1:8000/">Please here to continue.</a>
+
+<h1>Sorry! The right answer is {{ correct }}.</h1>
+<a href="https://morning-falls-60818.herokuapp.com/game/">Please continue.</a>
+
 </div>
-{% endblock %}
+
+{% endblock content %}
