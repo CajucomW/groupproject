@@ -1,42 +1,68 @@
 
 .row-1{
     border-radius: 25px;
-        border: 2px solid #73AD21;
-        padding: 5px; 
-        width: 450px;
-        height: 100px;
-        position: absolute;
-        top: 100px;
-        left: 500px;
-        background: yellow;
-        text-align: center;
+    border: 2px solid #73AD21;
+    padding: 5px; 
+    width: 450px;
+    height: 100px;
+    position: absolute;
+    top: 100px;
+    left: 500px;
+    background: yellow;
+    text-align: center;
       }
 
 .triviaquestion{
-        border-radius: 25px;
-        border: 2px solid #73AD21;
-        padding: 15px; 
-        width: 500px;
-        height: 250px; 
-        position: relative;
-        top: 95px;
-        right: 50px;
-        font-size: 16pt;
-        background: blue;
-        text-align: center;
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 15px; 
+    width: 500px;
+    height: 175px; 
+    position: relative;
+    top: 95px;
+    right: 50px;
+    font-size: 16pt;
+    background: blue;
+    text-align: center;
       }
   
 .row-3{
-        border-radius: 25px;
-        border: 2px solid #73AD21;
-        padding: 20px; 
-        width: 700px;
-        height: 175px; 
-        position: absolute;
-        top: 250px;
-        left: -125px;
-        text-align: center;
-        background: yellow;
+    border-radius: 25px;
+    border: 2px solid #73AD21
+    padding: 20px; 
+    width: 700px;
+    height: 175px; 
+    position: absolute;
+    top: 295px;
+    left: -125px;
+    text-align: center;
+    background-color: yellow;
+       } 
+
+.correct{
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px; 
+    width: 500px;
+    height: 175px; 
+    position: absolute;
+    top: 250px;
+    left: 500px;
+    text-align: center;
+    background: yellow;
+       } 
+
+.incorrect{
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px; 
+    width: 500px;
+    height: 175px; 
+    position: absolute;
+    top: 250px;
+    left: 500px;
+    text-align: center;
+    background: yellow;
        } 
        
 body {
@@ -230,13 +256,14 @@ img {
     }
 }
 .data {
-    color: black;
+    color: white;
 
 }
 
 body {
     color: black;
 }
+
 
 /*.triviaquestion {*/
 /*    font-size: 16pt;*/

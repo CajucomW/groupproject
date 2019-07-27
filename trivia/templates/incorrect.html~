@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="row incorrect">
-<h1>Sorry! You chose the wrong answer. </h1>
+<h1>Sorry! You choses the wrong answer. </h1>
 <a href="http://127.0.0.1:8000/">Please here to continue.</a>
 </div>
 {% endblock %}

@@ -5,7 +5,7 @@
 <!--Trivia game here-->
 
 <div class="row-1">
-    <div class="col-sm-9">
+    <div class="">
                                                             <h1>Let's get started!</h1>
         <div class="row-2 triviaquestion">
             <div class=" ">
@@ -14,17 +14,17 @@
 
                                                     <p>{{ trivia }}</p>
                                                     <p>{{ number_already_answered }}</p>
-                <div class="row-3" style="background: yellow;">
-                    <div class="col-4 col-sm-6">
+                <div class="row-3">
+                    <div class="">
 
 <!--Answers and buttons here-->
 
                       <form method="POST" action=".">
                         {% csrf_token %}
-                        <input type="radio" name="a0" value="{{ answer0 }}">{{ answer0 }}
-                        <input type="radio" name="a1" value="{{ answer1 }}">{{ answer1 }}
-                        <input type="radio" name="a2" value="{{ answer2 }}">{{ answer2 }}
-                        <input type="radio" name="a3" value="{{ answer3 }}">{{ answer3 }}
+                        <input type="radio" name="a0" value="{{ answer0 }}">{{ answer0 }}<br>
+                        <input type="radio" name="a1" value="{{ answer1 }}">{{ answer1 }}<br>
+                        <input type="radio" name="a2" value="{{ answer2 }}">{{ answer2 }}<br>
+                        <input type="radio" name="a3" value="{{ answer3 }}">{{ answer3 }}<br>
                         <button>Submit</button>
                       </form>
                    </div>
