@@ -1,7 +1,7 @@
 
 .row-1{
     border-radius: 25px;
-    border: 2px solid #73AD21;
+    border: 2px solid #f8f9fa;
     padding: 5px; 
     width: 450px;
     height: 100px;
@@ -14,7 +14,7 @@
 
 .triviaquestion{
     border-radius: 25px;
-    border: 2px solid #73AD21;
+    border: 2px solid #f8f9fa;
     padding: 15px; 
     width: 500px;
     height: 175px; 
@@ -28,13 +28,13 @@
   
 .row-3{
     border-radius: 25px;
-    border: 2px solid #73AD21
+    border: 2px solid #f8f9fa;
     padding: 20px; 
     width: 700px;
-    height: 175px; 
+    height: 200px; 
     position: absolute;
-    top: 295px;
-    left: -125px;
+    top: 235px;
+    left: -95px;
     text-align: center;
     background-color: yellow;
        } 
@@ -102,98 +102,7 @@ input:checked + .overlay{
     opacity: 1;
     z-index: 1;
 }
-.overlay {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: RGBa(255,255,255,0.3);
-    opacity: 0;
-    z-index: -1;
-    transition: 0.5s ease;
-}
-.popup {
-    max-height: 90%;
-    position: absolute;
-    padding: 10px;
-    left: 50%;
-    top: 50%;
-    width: 300px;
-    overflow-y: auto;
-    background: #fff;
-    color: #999;
-    transform: translate(-50%,-50%);
-    border-radius: 5px;
-}
-.title {
-    font-size: 25px;
-    text-align: center;
-    display: block;
-}
-.popup input {
-    display: block;
-    margin: 20px 0;
-    width: 50%;
-    padding: 5px 0;
-    transition: 0.25s ease;
-    color: #333;
-    border: none;
-    border-bottom: 1px solid transparent;
-    font-size: 15px;
-    outline: none;
-}
-.popup input:focus {
-    width: 90%;
-    border-bottom: 1px #aaa solid;
-}
-.login {
-    margin: auto;
-    display: block;
-    width: 50px;
-    background: #eee;
-    padding: 10px;
-    cursor: pointer;
-    transition: 0.25s ease;
-    text-align: center;
-}
-.login:hover {
-    background: #e0e0e0;
-}
-.popup p {
-    text-align: center;
-    font-size: 20px;
-    margin: 30px 0;
-}
-.social-buttons {
-    margin: auto;
-    display: block;
-    width: 60%;
-}
-.social {
-    padding: 10px;
-    color: #fff;
-    transition: 0.25s ease;
-    cursor: pointer;
-    display: inline-block;
-}
-.red {
-    background: linear-gradient(to left, #dd0000 50%,#dd0000 50%,#9A0000 50%, #9A0000 50%);
-    width: 50px;
-    display: inline-block;
-}
-.red:hover {
-    background-position: 35px;
-}
-.blue {
-    background: linear-gradient(to left, #005DDD 50%,#005DDD 50%,#00419A 50%, #00419A 50%);
-    width: 70px;
-    display: inline-block;
-}
-.blue:hover {
-    background-position: 45px;
+
 }
 .sean {
     opacity: 0;
@@ -264,24 +173,36 @@ body {
     color: black;
 }
 
-.col-s{
-
-    border-radius: 25px;
-    border: 2px solid #73AD21;
-    padding: 5px; 
-    width: 450px;
-    height: 100px;
+.sign-up {
+    
+    max-height: 90%;
     position: absolute;
-    top: 100px;
-    left: 500px;
-    background: yellow;
-    text-align: center;
-
+    padding: 10px;
+    left: 50%;
+    top: 55%;
+    width: 600px;
+    overflow-y: auto;
+    background: #fff;
+    color: #999;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    
 }
 
-/*.triviaquestion {*/
-/*    font-size: 16pt;*/
-/*    background: blue;*/
-/*}*/
+.offset-md-3 {
+    
+    max-height: 90%;
+    position: absolute;
+    padding: 10px;
+    left: 25%;
+    top: 55%;
+    width: 600px;
+    overflow-y: auto;
+    background: #fff;
+    color: #999;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    text-align: center;
+}
 
 

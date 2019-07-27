@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="col-s">
+<div class="col sign-up">
   <h2>Sign up</h2>
   <form method="post">
     {% csrf_token %}

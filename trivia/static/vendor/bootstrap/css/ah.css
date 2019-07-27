@@ -1,7 +1,7 @@
 
 .row-1{
     border-radius: 25px;
-    border: 2px solid #73AD21;
+    border: 2px solid #f8f9fa;
     padding: 5px; 
     width: 450px;
     height: 100px;
@@ -14,7 +14,7 @@
 
 .triviaquestion{
     border-radius: 25px;
-    border: 2px solid #73AD21;
+    border: 2px solid #f8f9fa;
     padding: 15px; 
     width: 500px;
     height: 175px; 
@@ -28,13 +28,13 @@
   
 .row-3{
     border-radius: 25px;
-    border: 2px solid #73AD21
+    border: 2px solid #f8f9fa;
     padding: 20px; 
     width: 700px;
-    height: 175px; 
+    height: 200px; 
     position: absolute;
-    top: 295px;
-    left: -125px;
+    top: 235px;
+    left: -95px;
     text-align: center;
     background-color: yellow;
        } 
@@ -264,10 +264,36 @@ body {
     color: black;
 }
 
+.sign-up {
+    
+    max-height: 90%;
+    position: absolute;
+    padding: 10px;
+    left: 50%;
+    top: 55%;
+    width: 600px;
+    overflow-y: auto;
+    background: #fff;
+    color: #999;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    
+}
 
-/*.triviaquestion {*/
-/*    font-size: 16pt;*/
-/*    background: blue;*/
-/*}*/
+.offset-md-3 {
+    
+    max-height: 90%;
+    position: absolute;
+    padding: 10px;
+    left: 25%;
+    top: 55%;
+    width: 600px;
+    overflow-y: auto;
+    background: #fff;
+    color: #999;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    text-align: center;
+}
 
 
