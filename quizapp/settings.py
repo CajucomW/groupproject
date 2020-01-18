@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'morning-falls-60818.herokuapp.com',
+    '127.0.0.1',
+    'localhost'
     ]
 
 
