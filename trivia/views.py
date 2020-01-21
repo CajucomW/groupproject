@@ -123,16 +123,6 @@ def gamepage(request):
 
     return render(request, 'game.html', context)
 
-# ################### TODO PROBLEM LIST ###################
-# # correct/incorrect answers broke when random questions 
-# # was fixed.
-
-# # It appears that when going to a new page, the question
-# # reloads, which give a whole new set of answers.
-# # The answer is wrong every time 'cause the set of 
-# # answers are different already.
-
-
 def scores():
     correct_number = 0
     correct_number = len(correct_list)
@@ -151,12 +141,6 @@ def incorrect(request):
     'correct': correct,
     }
     return render(request, 'incorrect.html', context)
-
-# gamepage()
-
-# scores()
-
-#log in and log out
 
 def login_user(request):
 
@@ -215,11 +199,11 @@ def signup(request):
     
 def create_user(data):
     user =  User.objects.create_user(username=data['username'],
-                            email=data['email'],
-                            password=data['password'],
-                            first_name=data['first_name'],
-                            last_name=data['last_name']
-                            )
+        email=data['email'],
+        password=data['password'],
+        first_name=data['first_name'],
+        last_name=data['last_name']
+        )
     user.is_admin=False
     user.is_staff=False
     user.save()
@@ -241,3 +225,8 @@ def fraction(request):
     ).count()
     
     return render(request, 'game.html', context)
+
+################### TODO ###################
+# - Styling of Correct and Incorrect pages
+# - Improve responsiveness
+# - Fix SignUp and LogIn pages
