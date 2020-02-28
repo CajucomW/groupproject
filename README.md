@@ -6,7 +6,7 @@
 
 <p>Heroku link 
     <a 
-        href="https://morning-falls-60818.herokuapp.com/game/"
+        href="https://morning-falls-60818.herokuapp.com/game/",
         target="_blank">
             here
         </a>.
