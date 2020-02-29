@@ -21,11 +21,9 @@ from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', views.gamepage),
     path('game/', views.gamepage),
     path('game/correct/', views.correct),
     path('game/incorrect/', views.incorrect),
-    path('game/', views.gamepage),
     path('signup/', views.signup, name='signup'),
     path('', views.login_user),
     path('login/', views.logout_user),
